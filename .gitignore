@@ -6,6 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# ormconfig
+ormconfig.json
+
 # tmp folder
 tmp/*
 !tmp/.gitkeep

@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
+    "pgdata",
+    "postgres",
     "rentx",
-    "tsnd"
+    "tsnd",
+    "typeorm"
   ]
 }
