@@ -2,10 +2,16 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { CreateCategoryController } from "./CreateCategoryController";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
-const categoriesRepository = CategoriesRepository.getInstance();
-const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
-const createCategoryController = new CreateCategoryController(
-  createCategoryUseCase
-);
+interface IRespose {
+  createCategoryController: CreateCategoryController;
+  createCategoryUseCase: CreateCategoryUseCase;
+}
 
-export { createCategoryController, createCategoryUseCase };
+export default (): IRespose => {
+  const categoriesRepository = new CategoriesRepository();
+  const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
+  const createCategoryController = new CreateCategoryController(
+    createCategoryUseCase
+  );
+  return { createCategoryController, createCategoryUseCase };
+};

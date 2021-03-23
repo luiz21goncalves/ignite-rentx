@@ -2,10 +2,17 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { ImportCategoryController } from "./importCategoryController";
 import { ImportCategoryUseCase } from "./ImportCategoryUseCase";
 
-const categoriesRepository = CategoriesRepository.getInstance();
-const importCategoryuseCase = new ImportCategoryUseCase(categoriesRepository);
-const importCategoryController = new ImportCategoryController(
-  importCategoryuseCase
-);
+interface IResponse {
+  importCategoryController: ImportCategoryController;
+  importCategoryUseCase: ImportCategoryUseCase;
+}
 
-export { importCategoryController, importCategoryuseCase };
+export default (): IResponse => {
+  const categoriesRepository = new CategoriesRepository();
+  const importCategoryUseCase = new ImportCategoryUseCase(categoriesRepository);
+  const importCategoryController = new ImportCategoryController(
+    importCategoryUseCase
+  );
+
+  return { importCategoryController, importCategoryUseCase };
+};
