@@ -7,22 +7,16 @@ class CreateSpecificationController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name, description } = request.body;
 
-    try {
-      const createSpecificationUseCate = container.resolve(
-        CreateSpecificationUseCase
-      );
+    const createSpecificationUseCate = container.resolve(
+      CreateSpecificationUseCase
+    );
 
-      const specification = await createSpecificationUseCate.execute({
-        name,
-        description,
-      });
+    const specification = await createSpecificationUseCate.execute({
+      name,
+      description,
+    });
 
-      return response.status(201).json(specification);
-    } catch (err) {
-      return response.status(400).json({
-        error: err.message,
-      });
-    }
+    return response.status(201).json(specification);
   }
 }
 

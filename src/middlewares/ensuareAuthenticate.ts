@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 
+import { AppError } from "../errors/AppError";
 import { UsersRepository } from "../modules/accounts/repositories/implementations/UsersRepository";
 
 interface IPayload {
@@ -15,13 +16,13 @@ async function ensuareAutheticate(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new Error("Token missing");
+    throw new AppError("Token missing");
   }
 
   const [bearer, token] = authHeader.split(" ");
 
   if (!bearer || !token) {
-    throw new Error("Token badly formatteds");
+    throw new AppError("Token badly formatteds", 401);
   }
 
   try {
@@ -32,15 +33,15 @@ async function ensuareAutheticate(
 
     const usersRepository = new UsersRepository();
 
-    const user = usersRepository.findById(user_id);
+    const user = await usersRepository.findById(user_id);
 
     if (!user) {
-      throw new Error("User does not exists");
+      throw new AppError("User does not exists", 401);
     }
 
     next();
   } catch (err) {
-    throw new Error("Invalid token");
+    throw new AppError("Invalid token", 401);
   }
 }
 
