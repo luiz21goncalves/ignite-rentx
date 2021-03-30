@@ -1,6 +1,8 @@
 import fs from "fs";
 
-const deleteFile = async (filePath: string) => {
+const deleteFile: (filePath: string) => Promise<void> = async (
+  filePath: string
+) => {
   try {
     await fs.promises.stat(filePath);
   } catch (err) {
