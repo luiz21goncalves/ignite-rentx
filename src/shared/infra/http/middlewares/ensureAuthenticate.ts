@@ -8,7 +8,7 @@ interface IPayload {
   sub: string;
 }
 
-async function ensuareAutheticate(
+async function ensureAuthenticate(
   request: Request,
   response: Response,
   next: NextFunction
@@ -49,4 +49,4 @@ async function ensuareAutheticate(
   }
 }
 
-export { ensuareAutheticate };
+export { ensureAuthenticate };

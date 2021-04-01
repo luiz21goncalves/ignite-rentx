@@ -10,7 +10,7 @@
 **RN**
 - [x] Não deve ser possível cadastrar um carro com uma placa já existente.
 - [x] O carro deve ser cadastrado com, por padrão como disponível.
-- [ ] Somente um administrador pode cadastrar um carro.
+- [x] Somente um administrador pode cadastrar um carro.
 
 # Listagem de carros
 
