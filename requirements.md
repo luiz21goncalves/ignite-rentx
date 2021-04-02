@@ -39,16 +39,15 @@
 # Cadastro de imagens do carro
 
 **RF**
-- [ ] Deve ser possível cadastrar a imagem do carro
-- [ ] Deve ser possível listar todos os carros.
+- [x] Deve ser possível cadastrar a imagem do carro
 
 **RN**
-- [ ] Utilizar o `multer` para upload dos arquivos
+- [x] Utilizar o `multer` para upload dos arquivos
 
 **RN**
-- [ ] Não deve ser possível cadastrar uma imagem para um carro não cadastrado.
-- [ ] O usuário deve cadastrar mais de uma imagem parar o mesmo carro.
-- [ ] Somente um administrador pode cadastrar images para os carros.
+- [x] Não deve ser possível cadastrar uma imagem para um carro não cadastrado.
+- [x] O usuário deve cadastrar mais de uma imagem parar o mesmo carro.
+- [x] Somente um administrador pode cadastrar images para os carros.
 
 
 # Alugel de carro
