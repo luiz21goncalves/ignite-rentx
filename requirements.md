@@ -27,16 +27,14 @@
 # Cadastro de especificação no caro
 
 **RF**
-- [ ] Deve ser possível cadastrar uma especificação para um carro
-- [ ] Deve ser possível listar todas as especificações.
-- [ ] Deve ser possível listar todos os carros.
+- [x] Deve ser possível cadastrar uma especificação para um carro
 
 **RNF**
 
 **RN**
-- [ ] Não deve ser possível cadastrar uma especificação para um caro não cadastrado.
-- [ ] Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-- [ ] Somente um administrador pode cadastrar uma especificação.
+- [x] Não deve ser possível cadastrar uma especificação para um caro não cadastrado.
+- [x] Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
+- [x] Somente um administrador pode cadastrar uma especificação.
 
 # Cadastro de imagens do carro
 
@@ -45,7 +43,7 @@
 - [ ] Deve ser possível listar todos os carros.
 
 **RN**
-- [ ] Utilizar o `multer` para upload dos arquivos 
+- [ ] Utilizar o `multer` para upload dos arquivos
 
 **RN**
 - [ ] Não deve ser possível cadastrar uma imagem para um carro não cadastrado.

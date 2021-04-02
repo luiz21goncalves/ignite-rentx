@@ -13,6 +13,14 @@ class CarsRepository implements ICarsRepository {
     this.repository = getRepository(Car);
   }
 
+  async save(car: Car): Promise<Car> {
+    return this.repository.save(car);
+  }
+
+  async findById(id: string): Promise<Car> {
+    return this.repository.findOne(id);
+  }
+
   async listAllAvailable({
     brand,
     name,

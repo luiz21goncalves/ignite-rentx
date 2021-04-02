@@ -8,6 +8,10 @@ import {
 class CategoriesRepositoryInMemory implements ICategoriesRepository {
   private categories: Category[] = [];
 
+  constructor() {
+    this.categories = [];
+  }
+
   async create({ name, description }: ICreateCategoryDTO): Promise<Category> {
     const category = new Category();
 
