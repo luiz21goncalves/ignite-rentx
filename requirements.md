@@ -53,9 +53,9 @@
 # Alugel de carro
 
 **RF**
-- [ ] Deve ser possível cadastrar um alugel.
+- [x] Deve ser possível cadastrar um alugel.
 
 **RN**
-- [ ] O alugel deve ter duração mínima de 24 hora.
-- [ ] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.
-- [ ] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.
+- [x] O alugel deve ter duração mínima de 24 hora.
+- [x] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.
+- [x] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.
