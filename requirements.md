@@ -15,13 +15,13 @@
 # Listagem de carros
 
 **RF**
-- [ ] Deve ser possível listar todos os carros disponíveis.
-- [ ] Deve ser possível listar todos os carros disponíveis por categoria.
-- [ ] Deve ser possível listar todos os carros disponíveis por marca.
-- [ ] Deve ser possível listar todos os carros disponíveis por nome do carro.
+- [x] Deve ser possível listar todos os carros disponíveis.
+- [x] Deve ser possível listar todos os carros disponíveis por categoria.
+- [x] Deve ser possível listar todos os carros disponíveis por marca.
+- [x] Deve ser possível listar todos os carros disponíveis por nome do carro.
 
 **RN**
-- [ ] O usuário não precisa estar logado no sistema.
+- [x] O usuário não precisa estar logado no sistema.
 
 
 # Cadastro de especificação no caro
