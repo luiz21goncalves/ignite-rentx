@@ -1,5 +1,6 @@
 import { inject, injectable } from "tsyringe";
 
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { IDateProvider } from "@shared/container/Providers/DateProvider/IDateProvider";
@@ -18,7 +19,10 @@ class CreateRentalUseCase {
     private rentalsRepository: IRentalsRepository,
 
     @inject("DayjsDateProvider")
-    private dateProvider: IDateProvider
+    private dateProvider: IDateProvider,
+
+    @inject("CarsRepository")
+    private carsRepository: ICarsRepository
   ) {}
 
   async execute({
@@ -44,10 +48,8 @@ class CreateRentalUseCase {
       throw new AppError("There's a rental in progress for user");
     }
 
-    const dateNow = new Date();
-
     const compareDate = this.dateProvider.compareInHours({
-      start_date: dateNow,
+      start_date: new Date(),
       end_date: expected_return_date,
     });
 
@@ -59,6 +61,11 @@ class CreateRentalUseCase {
       user_id,
       car_id,
       expected_return_date,
+    });
+
+    await this.carsRepository.updatedAvailable({
+      id: car_id,
+      available: false,
     });
 
     return rental;
