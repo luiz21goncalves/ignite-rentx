@@ -10,6 +10,20 @@ class RentalsRepositoryInMemory implements IRentalsRepository {
     this.rentals = [];
   }
 
+  async update(rental: Rental): Promise<Rental> {
+    const rentalIndex = this.rentals.findIndex(
+      (findRental) => findRental.id === rental.id
+    );
+
+    this.rentals[rentalIndex] = rental;
+
+    return rental;
+  }
+
+  async findById(id: string): Promise<Rental> {
+    return this.rentals.find((findRental) => findRental.id === id);
+  }
+
   async create({
     car_id,
     user_id,
