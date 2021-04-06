@@ -66,6 +66,16 @@ describe("Create Rental", () => {
       category_id: "category 1",
     });
 
+    const { id: id2 } = await carsRepositoryInMemory.create({
+      name: "Car 1",
+      description: "Description car",
+      daily_rate: 100,
+      license_plate: "BVC-1234",
+      fine_amount: 60,
+      brand: "Brand 1",
+      category_id: "category 1",
+    });
+
     await rentalsRepositoryInMemory.create({
       car_id: id,
       user_id,
@@ -74,7 +84,7 @@ describe("Create Rental", () => {
 
     await expect(
       createRentalUseCase.execute({
-        car_id: id,
+        car_id: id2,
         user_id,
         expected_return_date: dateAdd24Hours,
       })
