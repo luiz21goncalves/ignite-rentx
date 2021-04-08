@@ -5,6 +5,7 @@ interface IDateProvider {
   convertToUtcDate(date: Date): string;
   compareInDays(date: ICompareDateDTO): number;
   addDays(days: number): Date;
+  addHours(hours: number): Date;
 }
 
 export { IDateProvider };
