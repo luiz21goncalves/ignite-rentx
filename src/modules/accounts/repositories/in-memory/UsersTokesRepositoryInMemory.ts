@@ -3,11 +3,17 @@ import { UserToken } from "@modules/accounts/infra/typeorm/entities/UserToken";
 
 import { IUsersTokensRepository } from "../IUserstokesRepository";
 
-class UsersTokesRepositoryInMemory implements IUsersTokensRepository {
+class UsersTokensRepositoryInMemory implements IUsersTokensRepository {
   private usersTokens: UserToken[];
 
   constructor() {
     this.usersTokens = [];
+  }
+
+  async findByRefreshToken(refresh_token: string): Promise<UserToken> {
+    return this.usersTokens.find(
+      (findUserToken) => findUserToken.refresh_token === refresh_token
+    );
   }
 
   async delete(id: string): Promise<void> {
@@ -48,4 +54,4 @@ class UsersTokesRepositoryInMemory implements IUsersTokensRepository {
   }
 }
 
-export { UsersTokesRepositoryInMemory };
+export { UsersTokensRepositoryInMemory };

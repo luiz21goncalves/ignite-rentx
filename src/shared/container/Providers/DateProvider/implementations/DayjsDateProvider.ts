@@ -7,6 +7,10 @@ import { IDateProvider } from "../IDateProvider";
 dayjs.extend(utc);
 
 class DayjsDateProvider implements IDateProvider {
+  isBefore({ start_date, end_date }: ICompareDateDTO): boolean {
+    return dayjs(start_date).isBefore(end_date);
+  }
+
   addHours(hours: number): Date {
     return dayjs().add(hours, "hours").toDate();
   }
