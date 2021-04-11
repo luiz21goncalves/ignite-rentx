@@ -32,7 +32,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    token = body.token;
+    token = body.refresh_token;
 
     categoriesRepository = new CategoriesRepository();
   });
