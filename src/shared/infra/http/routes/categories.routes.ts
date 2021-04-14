@@ -14,7 +14,7 @@ const createCategoryController = new CreateCategoryController();
 const listCategoriesController = new ListCategoriesController();
 const importCategoryController = new ImportCategoryController();
 
-const upload = multer(uploadConfig.upload("./tmp/category/cvs"));
+const upload = multer(uploadConfig);
 
 categoriesRoutes.get("/", listCategoriesController.handle);
 
