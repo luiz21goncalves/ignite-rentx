@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
+import { UserMap } from "@modules/accounts/mapper/UserMap";
+
 import { UpdateUserAvatarUseCase } from "./UpdateUserAvatarUseCase";
 
 class UpdateUserAvatarController {
@@ -15,7 +17,7 @@ class UpdateUserAvatarController {
       avatar_file,
     });
 
-    return response.json(user);
+    return response.json(UserMap.toDTO(user));
   }
 }
 

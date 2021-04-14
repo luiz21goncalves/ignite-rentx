@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
+import { UserMap } from "@modules/accounts/mapper/UserMap";
+
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
@@ -16,7 +18,7 @@ class CreateUserController {
       driver_license,
     });
 
-    return response.status(201).json(user);
+    return response.status(201).json(UserMap.toDTO(user));
   }
 }
 
