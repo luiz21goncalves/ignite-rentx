@@ -16,12 +16,11 @@ const uploadAvatar = multer(uploadConfig);
 
 usersRoutes.post("/", createUserController.handle);
 
-usersRoutes.use(ensureAuthenticate);
-
-usersRoutes.get("/", showUserProfileController.handle);
+usersRoutes.get("/", ensureAuthenticate, showUserProfileController.handle);
 
 usersRoutes.patch(
   "/avatar",
+  ensureAuthenticate,
   uploadAvatar.single("avatar"),
   updateUserAvatarController.handle
 );
