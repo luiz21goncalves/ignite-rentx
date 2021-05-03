@@ -7,7 +7,7 @@
 
 rentx é uma aplicação de alugel de carros, onde temos partes que são acessíveis somente por adminstradores, outra por todos ou usuários e outra somente por usuários cadastrados e que tenha feito login.
 
-## Requisitos
+## Tenha instalado
 
 - [ ] NodeJS
 - [ ] Docker
